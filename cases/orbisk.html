@@ -3,77 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orbisk — Case | Chippr</title>
+<title>Orbisk · Case | Chippr</title>
+<meta name="description" content="Een slimme camera die professionele keukens laat zien wat er wordt weggegooid, en waarom.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--navy-900:#080D24;--navy-800:#0C1330;--navy-600:#1C2A5E;--lavender:#B9C4F2;--blue:#7C92E8;--gold:#E3B341;--ink:#F2F4FD;--muted:#8E99C4;--radius:14px;--maxw:880px}
+  :root{--navy:#0B1230;--navy-card:#18204A;--paper:#F4F1EA;--lavender:#B9C0EC;--lavender-deep:#6E7AD6;--gold:#E7B23C;--ink:#F4F4FB;--ink-dim:#A6AED6;--maxw:820px}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--navy-900);color:var(--ink);font-family:'Hanken Grotesk',sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
-  ::selection{background:var(--gold);color:var(--navy-900)}
+  body{background:var(--navy);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:var(--navy)}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(8,13,36,.78);border-bottom:1px solid rgba(185,196,242,.08)}
-  nav{max-width:var(--maxw);margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px}
-  .back{font-size:14.5px;color:var(--muted);font-weight:500}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  header{position:sticky;top:0;z-index:50;background:rgba(11,18,48,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(185,192,236,.1)}
+  nav{max-width:var(--maxw);margin:0 auto;padding:16px 26px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:700;font-size:21px}
+  .back{font-size:15px;color:var(--ink-dim);font-weight:500}
   .back:hover{color:var(--ink)}
-  main{padding:88px 0 110px}
-  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px}
-  .eyebrow::before{content:"";width:22px;height:1px;background:var(--blue)}
-  h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(38px,5.4vw,58px);letter-spacing:-.02em;line-height:1.06;margin:20px 0 16px}
-  .lead{font-size:19px;color:var(--muted);max-width:56ch;margin-bottom:48px}
-  .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:64px}
-  .meta div{background:var(--navy-800);border:1px solid rgba(185,196,242,.09);border-radius:var(--radius);padding:20px 22px}
-  .meta .k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
-  .meta .v{font-weight:600;font-size:15.5px}
-  h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:26px;letter-spacing:-.01em;margin:48px 0 14px}
-  p{color:var(--muted);margin-bottom:18px;max-width:64ch}
-  .cta{margin-top:64px;background:var(--navy-800);border:1px solid rgba(227,179,65,.3);border-radius:18px;padding:40px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-  .cta strong{font-family:'Bricolage Grotesque',sans-serif;font-size:21px;font-weight:700;color:var(--ink)}
-  .btn{display:inline-block;background:var(--gold);color:var(--navy-900);font-weight:600;font-size:15px;padding:11px 22px;border-radius:10px}
-  a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
-  figure.case-img{margin:0 0 56px;border-radius:18px;overflow:hidden;border:1px solid rgba(185,196,242,.12);background:linear-gradient(135deg,var(--navy-800),var(--navy-600))}
+  main{padding:74px 0 104px}
+  .label{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--lavender-deep)}
+  h1{font-size:clamp(40px,6vw,62px);margin:18px 0 16px}
+  .lead{font-size:21px;color:var(--ink-dim);max-width:54ch;margin-bottom:44px}
+  .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:46px}
+  .meta div{background:var(--navy-card);border:1px solid rgba(185,192,236,.12);border-radius:14px;padding:18px 20px}
+  .meta .k{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-dim);display:block;margin-bottom:6px}
+  .meta .v{font-weight:600;font-size:16px}
+  figure.case-img{margin:0 0 50px;border-radius:18px;overflow:hidden;border:1px solid rgba(185,192,236,.14);background:linear-gradient(135deg,var(--navy-card),#23306b)}
   figure.case-img img{display:block;width:100%;height:auto}
-  figure.case-img .ph{display:flex;align-items:center;justify-content:center;height:260px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.08em}
-  @media (max-width:680px){.meta{grid-template-columns:1fr}}
+  figure.case-img .ph{display:flex;align-items:center;justify-content:center;height:280px;color:var(--ink-dim);font-size:14px}
+  h2{font-size:27px;margin:42px 0 12px}
+  p.body{color:var(--ink-dim);margin-bottom:16px;max-width:64ch}
+  .cta{margin-top:58px;background:var(--paper);border-radius:20px;padding:38px 34px;display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}
+  .cta strong{font-family:'Fraunces',serif;font-size:23px;font-weight:600;color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:var(--paper);font-weight:700;font-size:16px;padding:12px 24px;border-radius:999px}
+  a:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:6px}
+  @media (max-width:620px){.meta{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
   <nav>
-    <a class="logo" href="../index.html">Chippr</a>
-    <a class="back" href="../index.html#referenties">← Terug naar referenties</a>
+    <a class="brand" href="../index.html">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="15" stroke="#E7B23C" stroke-width="2.2"/><circle cx="11" cy="13" r="1.9" fill="#B9C0EC"/><circle cx="21" cy="13" r="1.9" fill="#B9C0EC"/><path d="M10 19c1.6 2.6 4 3.9 6 3.9s4.4-1.3 6-3.9" stroke="#E7B23C" stroke-width="2.2" stroke-linecap="round"/></svg>
+      Chippr
+    </a>
+    <a class="back" href="../index.html#werk">← Terug naar ons werk</a>
   </nav>
 </header>
 <main>
   <div class="wrap">
-    <span class="eyebrow">Case · Foodtech</span>
+    <span class="label">Case · Foodtech</span>
     <h1>Orbisk</h1>
-    <p class="lead">Een volautomatische food waste monitor die professionele keukens inzicht geeft in wat er wordt weggegooid, en waarom.</p>
-
+    <p class="lead">Een slimme camera die professionele keukens laat zien wat er wordt weggegooid, en waarom.</p>
     <div class="meta">
       <div><span class="k">Sector</span><span class="v">Horeca &amp; hospitality</span></div>
-      <div><span class="k">Technologie</span><span class="v">AI-beeldherkenning · IoT</span></div>
-      <div><span class="k">Locatie</span><span class="v">Utrecht</span></div>
+      <div><span class="k">Technologie</span><span class="v">AI-beeldherkenning</span></div>
+      <div><span class="k">Plek</span><span class="v">Utrecht</span></div>
     </div>
-
     <figure class="case-img">
       <img src="../assets/orbisk.png" alt="De Orbisk food waste monitor in een professionele keuken" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'afbeelding: assets/orbisk.png'}))">
     </figure>
-
     <h2>De uitdaging</h2>
-    <p>Professionele keukens gooien dagelijks voedsel weg zonder precies te weten wat, wanneer en waarom. Zonder data is sturen op verspilling onmogelijk, terwijl voedselkosten een van de grootste kostenposten zijn.</p>
-
+    <p class="body">Een keuken gooit dagelijks voedsel weg, maar zonder te weten wát precies, en hoeveel. En wat je niet meet, kun je niet verbeteren. Terwijl voedsel een van de grootste kostenposten is.</p>
     <h2>De oplossing</h2>
-    <p>Orbisk ontwikkelde een plug-and-play monitor: een slimme camera boven de afvalbak die met AI-beeldherkenning automatisch registreert welke producten worden weggegooid en in welke hoeveelheid. De data komt samen in een online dashboard met concrete, actiegerichte inzichten per ingrediënt en per dagdeel.</p>
-
+    <p class="body">Orbisk hangt een slimme camera boven de afvalbak. Die herkent met AI automatisch welke producten erin gaan en in welke hoeveelheid. Alles komt samen in een helder dashboard met concrete inzichten, per ingrediënt en per dagdeel.</p>
     <h2>Het resultaat</h2>
-    <p>Keukens kunnen hiermee inkoop, productie en menu optimaliseren. Hospitalitybedrijven wereldwijd reduceren met Orbisk hun voedselverspilling aanzienlijk en besparen daarmee tienduizenden euro's per locatie per jaar.</p>
-
+    <p class="body">Keukens sturen er hun inkoop, productie en menu mee bij. Hospitalitybedrijven over de hele wereld verminderen zo hun verspilling fors, en besparen flink per locatie per jaar.</p>
     <div class="cta">
-      <strong>Een vergelijkbaar product bouwen?</strong>
+      <strong>Zoiets bouwen?</strong>
       <a class="btn" href="mailto:K.leunissen@chippr.dev">Plan een gesprek</a>
     </div>
   </div>

@@ -3,316 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chippr — Digitale producten, gebouwd met jong talent</title>
-<meta name="description" content="Chippr helpt organisaties met datagedreven software, prototypes en MVP's. In partnership met IGNE Software Solutions, Utrecht.">
+<title>Chippr · Jong talent dat jouw idee bouwt</title>
+<meta name="description" content="Chippr is de junior venture studio uit Utrecht waar jong talent en ervaren makers samen digitale producten bouwen. Ook met een klein budget.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy-900:#080D24;
-    --navy-800:#0C1330;
-    --navy-700:#131D45;
-    --navy-600:#1C2A5E;
-    --lavender:#B9C4F2;
-    --blue:#7C92E8;
-    --gold:#E3B341;
-    --gold-soft:#F0CE7E;
-    --ink:#F2F4FD;
-    --muted:#8E99C4;
-    --radius:14px;
-    --maxw:1140px;
+    --navy:#0B1230;
+    --navy-soft:#141C42;
+    --navy-card:#18204A;
+    --paper:#F4F1EA;
+    --paper-soft:#ECE7DC;
+    --lavender:#B9C0EC;
+    --lavender-deep:#6E7AD6;
+    --gold:#E7B23C;
+    --gold-ink:#8A6512;
+    --ink:#F4F4FB;
+    --ink-dim:#A6AED6;
+    --navy-ink:#1B2147;
+    --navy-ink-dim:#5A6088;
+    --maxw:1160px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    background:var(--navy-900);
+    background:var(--navy);
     color:var(--ink);
-    font-family:'Hanken Grotesk',sans-serif;
-    font-size:17px;
-    line-height:1.65;
+    font-family:'Hanken Grotesk',system-ui,sans-serif;
+    font-size:18px;line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
-  ::selection{background:var(--gold);color:var(--navy-900)}
+  ::selection{background:var(--gold);color:var(--navy)}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
 
-  /* ---------- Eyebrow / labels ---------- */
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--blue);
-    display:flex;align-items:center;gap:10px;
-  }
-  .eyebrow::before{
-    content:"";width:22px;height:1px;background:var(--blue);display:inline-block;
-  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.08}
 
-  /* ---------- Nav ---------- */
-  header{
-    position:sticky;top:0;z-index:50;
-    backdrop-filter:blur(14px);
-    background:rgba(8,13,36,.78);
-    border-bottom:1px solid rgba(185,196,242,.08);
+  .label{
+    font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--lavender-deep);
   }
-  nav{
-    max-width:var(--maxw);margin:0 auto;padding:18px 28px;
-    display:flex;align-items:center;justify-content:space-between;gap:24px;
-  }
-  .logo{
-    font-family:'Bricolage Grotesque',sans-serif;
-    font-weight:800;font-size:24px;letter-spacing:-.01em;
-    display:flex;align-items:center;gap:10px;
-  }
-  .logo svg{display:block}
-  .nav-links{display:flex;gap:32px;align-items:center;font-size:15px;font-weight:500;color:var(--muted)}
+  section.on-paper .label{color:var(--gold-ink)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,18,48,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(185,192,236,.1)}
+  nav{max-width:var(--maxw);margin:0 auto;padding:16px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-weight:700;font-size:23px}
+  .smiley{width:30px;height:30px;flex-shrink:0}
+  .nav-links{display:flex;align-items:center;gap:30px;font-size:16px;font-weight:500;color:var(--ink-dim)}
   .nav-links a:hover{color:var(--ink)}
-  .nav-links .spark-pill{
-    color:var(--gold);
-    border:1px solid rgba(227,179,65,.4);
-    border-radius:99px;padding:4px 14px;
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;
-  }
-  .btn{
-    display:inline-block;
-    background:var(--gold);color:var(--navy-900);
-    font-weight:600;font-size:15px;
-    padding:11px 22px;border-radius:10px;
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(227,179,65,.35)}
-  .btn.ghost{
-    background:transparent;color:var(--lavender);
-    border:1px solid rgba(185,196,242,.3);
-  }
-  .btn.ghost:hover{box-shadow:none;border-color:var(--lavender)}
+  .btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:16px;padding:11px 22px;border-radius:999px;transition:transform .14s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.outline{background:transparent;color:var(--ink);border:1.5px solid rgba(185,192,236,.4)}
+  .btn.outline:hover{border-color:var(--lavender);transform:none}
+  .btn.dark{background:var(--navy);color:var(--paper)}
 
-  /* ---------- Hero ---------- */
-  .hero{position:relative;overflow:hidden;padding:110px 0 130px}
-  .hero .wrap{position:relative;z-index:2}
-  .hero h1{
-    font-family:'Bricolage Grotesque',sans-serif;
-    font-weight:800;
-    font-size:clamp(42px,6.4vw,76px);
-    line-height:1.04;
-    letter-spacing:-.02em;
-    max-width:13ch;
-    margin:26px 0 24px;
-  }
-  .hero h1 em{
-    font-style:normal;color:var(--lavender);
-    position:relative;
-  }
-  .hero p.lead{
-    font-size:19px;color:var(--muted);max-width:52ch;margin-bottom:38px;
-  }
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  /* hero */
+  .hero{padding:96px 0 104px;position:relative;overflow:hidden}
+  .hero .wrap{position:relative;z-index:2;max-width:920px}
+  .hero h1{font-size:clamp(40px,6.3vw,72px);margin:22px 0 26px;max-width:16ch}
+  .scribble{position:relative;white-space:nowrap}
+  .scribble svg{position:absolute;left:-2%;right:-2%;bottom:-.32em;width:104%;height:.42em;overflow:visible}
+  .scribble svg path{fill:none;stroke:var(--gold);stroke-width:7;stroke-linecap:round}
+  .hero p.lead{font-size:21px;color:var(--ink-dim);max-width:54ch;margin-bottom:36px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-note{font-size:15px;color:var(--ink-dim)}
+  .glow{position:absolute;top:-160px;right:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(110,122,214,.22),transparent 68%);z-index:1;pointer-events:none}
 
-  /* circuit traces — signature element */
-  .circuit{
-    position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.55;
-  }
-  .circuit path{
-    stroke:rgba(124,146,232,.22);stroke-width:1.5;fill:none;
-  }
-  .circuit .pulse{
-    stroke:var(--gold);stroke-width:2;fill:none;
-    stroke-dasharray:60 1400;
-    animation:trace 7s linear infinite;
-  }
-  .circuit .pulse.p2{animation-delay:2.4s;stroke:var(--blue)}
-  .circuit .pulse.p3{animation-delay:4.6s}
-  .circuit circle{fill:rgba(124,146,232,.35)}
-  @keyframes trace{to{stroke-dashoffset:-1460}}
-  @media (prefers-reduced-motion:reduce){
-    .circuit .pulse{animation:none;stroke-dasharray:none;opacity:.25}
-    .btn{transition:none}
-  }
+  /* logo strip */
+  .strip{border-top:1px solid rgba(185,192,236,.1);border-bottom:1px solid rgba(185,192,236,.1);padding:26px 0}
+  .strip .wrap{display:flex;align-items:center;gap:34px;flex-wrap:wrap;justify-content:center}
+  .strip span{font-size:14px;color:var(--ink-dim);margin-right:6px}
+  .strip b{font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:var(--lavender);letter-spacing:.01em}
 
-  /* ---------- Sections ---------- */
-  section{padding:96px 0}
-  .section-head{max-width:640px;margin-bottom:56px}
-  h2{
-    font-family:'Bricolage Grotesque',sans-serif;
-    font-weight:700;font-size:clamp(30px,3.6vw,42px);
-    letter-spacing:-.015em;line-height:1.12;
-    margin:18px 0 16px;
-  }
-  .section-head p{color:var(--muted)}
+  /* generic section */
+  section{padding:104px 0}
+  section.on-paper{background:var(--paper);color:var(--navy-ink)}
+  section.on-paper h2,section.on-paper h3{color:var(--navy-ink)}
+  .head{max-width:680px;margin-bottom:18px}
+  h2{font-size:clamp(30px,4vw,46px)}
+  .head .label{margin-bottom:14px;display:block}
+  .head p{font-size:19px;color:var(--ink-dim);margin-top:16px}
+  section.on-paper .head p{color:var(--navy-ink-dim)}
 
-  /* diensten */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .card{
-    background:var(--navy-800);
-    border:1px solid rgba(185,196,242,.09);
-    border-radius:var(--radius);
-    padding:34px 28px;
-    transition:border-color .2s ease, transform .2s ease;
-  }
-  .card:hover{border-color:rgba(185,196,242,.28);transform:translateY(-3px)}
-  .card .icon{
-    width:44px;height:44px;border-radius:11px;
-    background:var(--navy-600);
-    display:flex;align-items:center;justify-content:center;
-    margin-bottom:22px;
-  }
-  .card h3{
-    font-family:'Bricolage Grotesque',sans-serif;
-    font-weight:600;font-size:21px;margin-bottom:10px;
-  }
-  .card p{font-size:15.5px;color:var(--muted)}
+  /* waarom: conversational rows */
+  .reasons{display:grid;gap:0;margin-top:54px;border-top:1px solid rgba(27,33,71,.14)}
+  .reason{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;padding:38px 0;border-bottom:1px solid rgba(27,33,71,.14);align-items:start}
+  .reason .q{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--navy-ink);line-height:1.22}
+  .reason .a{color:var(--navy-ink-dim);font-size:18px}
+  .reason .a strong{color:var(--navy-ink);font-weight:700}
 
-  /* ---------- Spark band ---------- */
-  .spark{
-    background:linear-gradient(135deg,var(--navy-800),var(--navy-700));
-    border-top:1px solid rgba(227,179,65,.25);
-    border-bottom:1px solid rgba(227,179,65,.25);
-    position:relative;overflow:hidden;
-  }
-  .spark::after{
-    content:"";position:absolute;right:-180px;top:-180px;
-    width:520px;height:520px;border-radius:50%;
-    background:radial-gradient(circle,rgba(227,179,65,.14),transparent 65%);
-    pointer-events:none;
-  }
-  .spark-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
-  .spark-badge{
-    display:inline-flex;align-items:center;gap:9px;
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--gold);
-    border:1px solid rgba(227,179,65,.45);
-    border-radius:99px;padding:7px 16px;
-  }
-  .spark-badge .dot{
-    width:7px;height:7px;border-radius:50%;background:var(--gold);
-    box-shadow:0 0 10px var(--gold);
-  }
-  .spark h2 .mark{color:var(--gold)}
-  .spark p{color:var(--muted);margin-bottom:18px}
-  .spark ul{list-style:none;margin:26px 0 34px;display:grid;gap:14px}
-  .spark li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
-  .spark li svg{flex-shrink:0;margin-top:4px}
-  .spark-card{
-    background:var(--navy-900);
-    border:1px solid rgba(227,179,65,.3);
-    border-radius:18px;padding:38px 34px;
-    font-family:'JetBrains Mono',monospace;
-  }
-  .spark-card .row{
-    display:flex;justify-content:space-between;gap:16px;
-    padding:13px 0;border-bottom:1px dashed rgba(185,196,242,.14);
-    font-size:13.5px;
-  }
-  .spark-card .row:last-child{border-bottom:none}
-  .spark-card .key{color:var(--muted)}
-  .spark-card .val{color:var(--ink);text-align:right}
-  .spark-card .val.gold{color:var(--gold)}
+  /* referenties */
+  .refs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
+  .ref{display:flex;flex-direction:column;background:var(--navy-card);border:1px solid rgba(185,192,236,.12);border-radius:18px;padding:30px 28px;transition:transform .18s ease,border-color .18s ease}
+  .ref:hover{transform:translateY(-4px);border-color:rgba(231,178,60,.5)}
+  .ref .kind{font-size:13px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--lavender-deep);margin-bottom:16px}
+  .ref h3{font-size:27px;margin-bottom:9px}
+  .ref p{font-size:16px;color:var(--ink-dim);flex:1}
+  .ref .go{margin-top:22px;font-weight:700;font-size:16px;color:var(--gold);display:inline-flex;gap:7px;transition:gap .18s ease}
+  .ref:hover .go{gap:13px}
 
-  /* ---------- Referenties ---------- */
-  .refs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .ref{
-    display:flex;flex-direction:column;
-    background:var(--navy-800);
-    border:1px solid rgba(185,196,242,.09);
-    border-radius:var(--radius);
-    padding:34px 28px;
-    transition:border-color .2s ease, transform .2s ease;
-  }
-  .ref:hover{border-color:rgba(227,179,65,.45);transform:translateY(-3px)}
-  .ref .tag{
-    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--blue);margin-bottom:18px;
-  }
-  .ref h3{
-    font-family:'Bricolage Grotesque',sans-serif;
-    font-weight:700;font-size:24px;margin-bottom:10px;
-  }
-  .ref p{font-size:15.5px;color:var(--muted);flex:1}
-  .ref .more{
-    margin-top:24px;font-weight:600;font-size:15px;color:var(--gold);
-    display:inline-flex;align-items:center;gap:8px;
-  }
-  .ref:hover .more{gap:12px}
-  .ref .more{transition:gap .2s ease}
+  /* spark */
+  .spark{background:linear-gradient(150deg,#15103A,#241634 60%,#332019);position:relative;overflow:hidden}
+  .spark::before{content:"";position:absolute;left:-120px;bottom:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(231,178,60,.16),transparent 66%)}
+  .spark .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .spark-tag{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+  .spark-tag .s{width:18px;height:18px}
+  .spark h2{font-size:clamp(30px,4vw,44px);margin-bottom:18px}
+  .spark h2 .u{color:var(--gold)}
+  .spark p{color:var(--ink-dim);margin-bottom:16px;font-size:18px}
+  .spark .who{margin-top:26px;display:flex;gap:14px;align-items:center;padding-top:22px;border-top:1px solid rgba(231,178,60,.22)}
+  .spark .who .pin{font-size:15px;color:var(--ink-dim)}
+  .spark .who .pin b{color:var(--ink);font-weight:700;display:block;font-size:16px}
+  .spark-visual{background:rgba(11,18,48,.5);border:1px solid rgba(231,178,60,.28);border-radius:20px;padding:34px 32px}
+  .spark-visual .line{display:flex;gap:13px;align-items:flex-start;padding:15px 0;border-bottom:1px solid rgba(185,192,236,.12)}
+  .spark-visual .line:last-child{border-bottom:none}
+  .spark-visual .line .ic{flex-shrink:0;margin-top:2px}
+  .spark-visual .line p{margin:0;font-size:16.5px;color:var(--ink)}
+  .spark-visual .line p span{display:block;font-size:14.5px;color:var(--ink-dim);margin-top:2px}
 
-  /* ---------- Werkwijze ---------- */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(185,196,242,.1);border-radius:var(--radius);overflow:hidden}
-  .step{
-    padding:32px 26px;background:var(--navy-800);
-    border-right:1px solid rgba(185,196,242,.1);
-  }
-  .step:last-child{border-right:none}
-  .step .num{
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);
-    letter-spacing:.14em;margin-bottom:14px;display:block;
-  }
-  .step h3{font-family:'Bricolage Grotesque',sans-serif;font-size:18px;font-weight:600;margin-bottom:8px}
-  .step p{font-size:14.5px;color:var(--muted)}
+  /* werkwijze */
+  .flow{margin-top:54px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:step}
+  .stepc{position:relative}
+  .stepc .n{font-family:'Fraunces',serif;font-size:46px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:14px}
+  .stepc h3{font-size:21px;margin-bottom:8px}
+  .stepc p{font-size:16px;color:var(--navy-ink-dim)}
 
-  /* ---------- Contact / footer ---------- */
-  .contact{padding-bottom:60px}
-  .contact-box{
-    background:var(--navy-800);
-    border:1px solid rgba(185,196,242,.1);
-    border-radius:20px;
-    padding:64px 56px;
-    display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center;
-  }
-  .contact-box h2{margin-top:0}
-  address{
-    font-style:normal;font-size:15.5px;color:var(--muted);
-    display:grid;gap:6px;
-  }
-  address strong{color:var(--ink);font-weight:600}
+  /* quote */
+  .quote{background:var(--navy-soft)}
+  .quote .wrap{max-width:880px;text-align:center}
+  .quote blockquote{font-family:'Fraunces',serif;font-size:clamp(26px,3.6vw,38px);font-weight:500;line-height:1.28;color:var(--ink)}
+  .quote .by{margin-top:26px;font-size:16px;color:var(--ink-dim)}
+  .quote .by b{color:var(--lavender);font-weight:600}
+
+  /* contact */
+  .contact .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .contact h2{font-size:clamp(30px,4.2vw,48px);margin-bottom:16px}
+  .contact p{color:var(--ink-dim);font-size:19px;margin-bottom:30px;max-width:46ch}
+  address{font-style:normal;color:var(--ink-dim);font-size:17px;line-height:1.9}
+  address b{color:var(--ink);font-weight:700;font-family:'Fraunces',serif;font-size:20px;display:block;margin-bottom:8px}
   address a{color:var(--lavender)}
   address a:hover{color:var(--ink)}
-  footer{
-    border-top:1px solid rgba(185,196,242,.08);
-    padding:30px 0;font-size:13.5px;color:var(--muted);
-  }
-  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-  footer .mono{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em}
 
-  /* focus */
-  a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+  footer{border-top:1px solid rgba(185,192,236,.1);padding:30px 0;font-size:15px;color:var(--ink-dim)}
+  footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
 
-  /* ---------- Responsive ---------- */
-  @media (max-width:920px){
-    .cards{grid-template-columns:1fr}
+  a:focus-visible,.btn:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+  @media (max-width:880px){
+    .nav-links a:not(.btn){display:none}
+    .reason{grid-template-columns:1fr;gap:12px;padding:30px 0}
     .refs{grid-template-columns:1fr}
-    .spark-grid{grid-template-columns:1fr}
-    .steps{grid-template-columns:1fr 1fr}
-    .step:nth-child(2n){border-right:none}
-    .step{border-bottom:1px solid rgba(185,196,242,.1)}
-    .contact-box{grid-template-columns:1fr;padding:44px 32px}
-    .nav-links{display:none}
+    .spark .wrap{grid-template-columns:1fr;gap:38px}
+    .flow{grid-template-columns:1fr 1fr;gap:30px 24px}
+    .contact .wrap{grid-template-columns:1fr;gap:36px}
+    section{padding:76px 0}
+    .hero{padding:72px 0 80px}
   }
-  @media (max-width:560px){
-    .steps{grid-template-columns:1fr}
-    .step{border-right:none}
-    section{padding:72px 0}
-    .hero{padding:80px 0 96px}
-  }
+  @media (max-width:520px){.flow{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <header>
   <nav>
-    <a class="logo" href="#top" aria-label="Chippr home">
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-        <rect x="6" y="6" width="14" height="14" rx="3" stroke="#E3B341" stroke-width="2"/>
-        <path d="M10 1v4M16 1v4M10 21v4M16 21v4M1 10h4M1 16h4M21 10h4M21 16h4" stroke="#7C92E8" stroke-width="2" stroke-linecap="round"/>
+    <a class="brand" href="#top" aria-label="Chippr">
+      <svg class="smiley" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="15" stroke="#E7B23C" stroke-width="2.2"/>
+        <circle cx="11" cy="13" r="1.9" fill="#B9C0EC"/>
+        <circle cx="21" cy="13" r="1.9" fill="#B9C0EC"/>
+        <path d="M10 19c1.6 2.6 4 3.9 6 3.9s4.4-1.3 6-3.9" stroke="#E7B23C" stroke-width="2.2" stroke-linecap="round"/>
       </svg>
       Chippr
     </a>
     <div class="nav-links">
-      <a href="#diensten">Diensten</a>
-      <a href="#referenties">Referenties</a>
-      <a href="#werkwijze">Werkwijze</a>
-      <a href="#spark" class="spark-pill">✦ Spark</a>
+      <a href="#waarom">Waarom Chippr</a>
+      <a href="#werk">Ons werk</a>
+      <a href="#spark">Spark</a>
       <a href="#contact" class="btn">Plan een gesprek</a>
     </div>
   </nav>
@@ -322,88 +190,80 @@
 
   <!-- HERO -->
   <section class="hero">
-    <svg class="circuit" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path d="M-20 120 H320 l40 40 H620 l60 60 H980 l40 -40 H1460"/>
-      <path d="M-20 300 H180 l60 -60 H520 l40 40 H880 l80 80 H1460"/>
-      <path d="M-20 480 H260 l50 -50 H700 l60 60 H1100 l40 -40 H1460"/>
-      <path class="pulse" d="M-20 120 H320 l40 40 H620 l60 60 H980 l40 -40 H1460"/>
-      <path class="pulse p2" d="M-20 300 H180 l60 -60 H520 l40 40 H880 l80 80 H1460"/>
-      <path class="pulse p3" d="M-20 480 H260 l50 -50 H700 l60 60 H1100 l40 -40 H1460"/>
-      <circle cx="320" cy="120" r="3.5"/><circle cx="620" cy="160" r="3.5"/><circle cx="980" cy="220" r="3.5"/>
-      <circle cx="180" cy="300" r="3.5"/><circle cx="520" cy="240" r="3.5"/><circle cx="880" cy="280" r="3.5"/>
-      <circle cx="260" cy="480" r="3.5"/><circle cx="700" cy="430" r="3.5"/><circle cx="1100" cy="490" r="3.5"/>
-    </svg>
+    <span class="glow" aria-hidden="true"></span>
     <div class="wrap">
-      <span class="eyebrow">Venture studio · Utrecht</span>
-      <h1>Digitale producten, gebouwd met <em>jong talent</em></h1>
-      <p class="lead">Chippr helpt organisaties van elke omvang bij hun digitale uitdagingen. Van datagedreven software tot snelle prototypes en MVP's, ontwikkeld door gedreven designers en developers, begeleid door ervaren professionals.</p>
+      <span class="label">Junior venture studio · Utrecht</span>
+      <h1>Een goed idee verdient het om écht
+        <span class="scribble">gebouwd
+          <svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 15 C70 6, 150 6, 210 11 C250 14, 280 13, 296 9"/></svg>
+        </span> te worden.</h1>
+      <p class="lead">Chippr is de plek waar jong talent en ervaren makers samen digitale producten bouwen. Of je nu een schets op een bierviltje hebt of een bestaand platform wil laten groeien: we helpen je verder. Ook met een klein budget.</p>
       <div class="hero-cta">
-        <a class="btn" href="#contact">Start jouw project</a>
-        <a class="btn ghost" href="#spark">Ontdek Spark ✦</a>
+        <a class="btn" href="#contact">Maak jouw idee waar</a>
+        <a class="btn outline" href="#werk">Bekijk ons werk</a>
       </div>
     </div>
   </section>
 
-  <!-- DIENSTEN -->
-  <section id="diensten">
+  <!-- LOGO STRIP -->
+  <div class="strip">
     <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Wat we doen</span>
-        <h2>Van idee tot werkend product</h2>
-        <p>Technologie is geen doel op zich, maar een middel om processen te verbeteren en waarde te creëren. Daar bouwen wij op.</p>
+      <span>Gebouwd door het Chippr-team:</span>
+      <b>Orbisk</b><b>Beyco</b><b>FullCharge</b>
+    </div>
+  </div>
+
+  <!-- WAAROM -->
+  <section class="on-paper" id="waarom">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Waarom Chippr</span>
+        <h2>Herken je een van deze situaties?</h2>
+        <p>Dan zit je goed. We werken het liefst samen met ondernemers die ergens vastlopen, en zoeken er samen een weg uit.</p>
       </div>
-      <div class="cards">
-        <div class="card">
-          <div class="icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2l8 4.5v9L11 20l-8-4.5v-9L11 2z" stroke="#B9C4F2" stroke-width="1.8"/><path d="M11 11v9M11 11L3 6.5M11 11l8-4.5" stroke="#7C92E8" stroke-width="1.8"/></svg>
-          </div>
-          <h3>Prototypes &amp; MVP's</h3>
-          <p>Valideer je idee snel en betaalbaar. Voor praktisch elk budget ontwikkelen we een werkend prototype of MVP, zodat je weet of je innovatie hout snijdt voordat je groot investeert.</p>
+      <div class="reasons">
+        <div class="reason">
+          <div class="q">"Ik heb een tof idee, maar geen idee waar ik moet beginnen."</div>
+          <div class="a">Neem contact op, dan maken we jouw idee waar. We bouwen een prototype of MVP zodat je snel weet of het werkt, <strong>ook met een klein budget</strong>.</div>
         </div>
-        <div class="card">
-          <div class="icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 18V9M11 18V4M19 18v-6" stroke="#B9C4F2" stroke-width="1.8" stroke-linecap="round"/><path d="M1 20h20" stroke="#7C92E8" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Datagedreven software</h3>
-          <p>Maatwerksoftware die je organisatie ondersteunt bij strategische doelen. Schaalbaar, onderhoudbaar en gebouwd op moderne technologie.</p>
+        <div class="reason">
+          <div class="q">"Ik ben al goed bezig, maar mis de mensen om door te pakken."</div>
+          <div class="a">Ons team schuift aan als verlengstuk van het jouwe. Designers en developers die meedenken en doorbouwen, <strong>zodat je product naar een hoger niveau gaat</strong>.</div>
         </div>
-        <div class="card">
-          <div class="icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="#B9C4F2" stroke-width="1.8"/><path d="M11 6v5l3.5 2" stroke="#7C92E8" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Digitale transformatie</h3>
-          <p>We helpen je bestaande processen digitaliseren en versnellen. Pragmatisch, stap voor stap, met focus op efficiëntie, flexibiliteit en schaalbaarheid.</p>
+        <div class="reason">
+          <div class="q">"De kennis lekt steeds weg als er een nieuw team gedetacheerd wordt."</div>
+          <div class="a">Bij ons niet. Chippr bouwt aan <strong>duurzame samenwerkingen</strong>. Het doel is niet een factuur, maar samen groeien en de kennis binnenboord houden.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REFERENTIES -->
-  <section id="referenties">
+  <!-- WERK / REFERENTIES -->
+  <section id="werk">
     <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Referenties</span>
-        <h2>Producten waar we trots op zijn</h2>
-        <p>Een greep uit de platformen en producten waaraan we hebben bijgedragen, van foodtech tot energie.</p>
+      <div class="head">
+        <span class="label">Ons werk</span>
+        <h2>Producten waar we trots op zijn.</h2>
+        <p>Een greep uit de platformen en producten waar het Chippr-team aan heeft gebouwd, van foodtech tot energie.</p>
       </div>
       <div class="refs">
         <a class="ref" href="cases/orbisk.html">
-          <span class="tag">Foodtech · AI</span>
+          <span class="kind">Foodtech · AI</span>
           <h3>Orbisk</h3>
-          <p>Volautomatische food waste monitor voor professionele keukens. Een slimme camera met AI-beeldherkenning registreert wat er wordt weggegooid en vertaalt dat naar concrete besparingen.</p>
-          <span class="more">Bekijk case →</span>
+          <p>Een slimme camera die met AI herkent wat een professionele keuken weggooit, en dat vertaalt naar grip op voedselverspilling.</p>
+          <span class="go">Bekijk case →</span>
         </a>
         <a class="ref" href="cases/beyco.html">
-          <span class="tag">Agritech · Blockchain</span>
+          <span class="kind">Agritech · Blockchain</span>
           <h3>Beyco</h3>
-          <p>Wereldwijd handelsplatform voor koffie, gebouwd op blockchain. Beyco verbindt producenten en kopers rechtstreeks met elkaar en maakt de koffieketen transparant.</p>
-          <span class="more">Bekijk case →</span>
+          <p>Een wereldwijd handelsplatform dat koffieboeren en kopers rechtstreeks verbindt. Beyond Coffee, eerlijk en inzichtelijk.</p>
+          <span class="go">Bekijk case →</span>
         </a>
         <a class="ref" href="cases/fullcharge.html">
-          <span class="tag">Lifestyle · App</span>
+          <span class="kind">Lifestyle · App</span>
           <h3>FullCharge</h3>
-          <p>App die helpt bij persoonlijke groei met simpele en leuke routines. Kleine stappen, speelse motivatie en gewoontes die echt beklijven.</p>
-          <span class="more">Bekijk case →</span>
+          <p>Een app die helpt bij persoonlijke groei met simpele, leuke routines. Kleine stappen die echt blijven hangen.</p>
+          <span class="go">Bekijk case →</span>
         </a>
       </div>
     </div>
@@ -411,87 +271,78 @@
 
   <!-- SPARK -->
   <section class="spark" id="spark">
-    <div class="wrap spark-grid">
+    <div class="wrap">
       <div>
-        <span class="spark-badge"><span class="dot"></span> Spark</span>
-        <h2>De <span class="mark">junior venture studio</span> van Chippr</h2>
-        <p>Spark is het label waar jong IT-talent en ondernemerschap samenkomen. In combinatie met IGNE Software Solutions ontwikkelen onze young professionals prototypes en digitale producten voor ondernemers die klaar zijn om te groeien.</p>
-        <ul>
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4L14 4" stroke="#E3B341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Laagdrempelig: voor praktisch elk budget een passende aanpak
-          </li>
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4L14 4" stroke="#E3B341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Junior teams, begeleid door ervaren IGNE-professionals
-          </li>
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4L14 4" stroke="#E3B341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Korte sprints met reviews, zodat jij altijd grip houdt
-          </li>
-        </ul>
-        <a class="btn" href="#contact">Sparren over jouw idee</a>
+        <span class="spark-tag">
+          <svg class="s" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1l1.6 5.4L16 8l-5.4 1.6L9 15l-1.6-5.4L2 8l5.4-1.6z" fill="#E7B23C"/></svg>
+          Spark
+        </span>
+        <h2>De <span class="u">junior venture studio</span> van Chippr.</h2>
+        <p>Spark is waar jong IT-talent en ondernemerschap samenkomen. Samen met IGNE Software Solutions bouwen onze young professionals aan echte producten voor ondernemers die klaar zijn om te groeien.</p>
+        <p>Begeleid door ervaren makers, laagdrempelig in budget, en altijd dichtbij. Zo krijgt talent de ruimte om te groeien en jij een product dat staat.</p>
+        <div class="who">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="9" stroke="#E7B23C" stroke-width="1.6"/><path d="M11 22c0-3.3 2.7-6 6-6s6 2.7 6 6M17 14a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4z" stroke="#B9C0EC" stroke-width="1.6"/></svg>
+          <span class="pin"><b>Chippr × IGNE Software Solutions</b>Europalaan 100, Utrecht</span>
+        </div>
       </div>
-      <div class="spark-card" aria-label="Spark in het kort">
-        <div class="row"><span class="key">label</span><span class="val gold">Spark ✦</span></div>
-        <div class="row"><span class="key">partnership</span><span class="val">Chippr × IGNE Software Solutions</span></div>
-        <div class="row"><span class="key">focus</span><span class="val">prototypes · MVP's · digitalisering</span></div>
-        <div class="row"><span class="key">team</span><span class="val">young professionals + senior begeleiding</span></div>
-        <div class="row"><span class="key">locatie</span><span class="val">Europalaan 100, Utrecht</span></div>
+      <div class="spark-visual" aria-label="Wat Spark biedt">
+        <div class="line">
+          <svg class="ic" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10.5l4 4 10-10" stroke="#E7B23C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>Een aanpak voor elk budget<span>Van prototype tot volwaardig product, passend bij waar je nu staat.</span></p>
+        </div>
+        <div class="line">
+          <svg class="ic" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10.5l4 4 10-10" stroke="#E7B23C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>Jong talent, ervaren begeleiding<span>Gedreven juniors die meegroeien, met senior makers van IGNE die meekijken.</span></p>
+        </div>
+        <div class="line">
+          <svg class="ic" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10.5l4 4 10-10" stroke="#E7B23C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>Korte sprints, vaste reviews<span>Elke paar weken zie je wat er gebouwd is en stuur je mee.</span></p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- WERKWIJZE -->
-  <section id="werkwijze">
+  <section class="on-paper" id="werkwijze">
     <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Werkwijze</span>
-        <h2>Samen bouwen, sprint voor sprint</h2>
-        <p>We werken volgens Scrum. Elke twee à drie weken een sprint review, zodat we samen met jou bewaken wat er gebouwd wordt. Jouw betrokkenheid staat centraal.</p>
+      <div class="head">
+        <span class="label">Zo werken we</span>
+        <h2>Samen bouwen, in het ritme van een sprint.</h2>
+        <p>We werken volgens Scrum, met vaste reviewmomenten. Jij houdt grip, wij houden tempo.</p>
       </div>
-      <div class="steps">
-        <div class="step">
-          <span class="num">01 — Verkennen</span>
-          <h3>Kennismaking</h3>
-          <p>We brengen je uitdaging, doelen en budget in kaart en bepalen samen de scope.</p>
-        </div>
-        <div class="step">
-          <span class="num">02 — Ontwerpen</span>
-          <h3>Concept &amp; design</h3>
-          <p>Onze designers vertalen het idee naar een concreet, toetsbaar concept.</p>
-        </div>
-        <div class="step">
-          <span class="num">03 — Bouwen</span>
-          <h3>Sprints &amp; reviews</h3>
-          <p>Korte iteraties met vaste reviewmomenten. Jij stuurt mee, wij bouwen door.</p>
-        </div>
-        <div class="step">
-          <span class="num">04 — Lanceren</span>
-          <h3>Live &amp; doorontwikkelen</h3>
-          <p>We lanceren, meten en verbeteren. Klaar voor de volgende groeistap.</p>
-        </div>
+      <div class="flow">
+        <div class="stepc"><div class="n">1</div><h3>Kennismaken</h3><p>We brengen je idee, doel en budget in kaart en bepalen samen de scope.</p></div>
+        <div class="stepc"><div class="n">2</div><h3>Ontwerpen</h3><p>Onze designers maken het concept tastbaar en toetsbaar.</p></div>
+        <div class="stepc"><div class="n">3</div><h3>Bouwen</h3><p>Korte sprints met reviews. Jij stuurt mee, wij bouwen door.</p></div>
+        <div class="stepc"><div class="n">4</div><h3>Live &amp; groeien</h3><p>We lanceren, meten en verbeteren. Klaar voor de volgende stap.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote">
+    <div class="wrap">
+      <blockquote>"We wilden geen los projectteam dat na de oplevering weer verdwijnt. Met Chippr bouwen we aan iets dat blijft, en groeien onze mensen mee."</blockquote>
+      <div class="by">Een opdrachtgever over <b>de samenwerking met Chippr</b></div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="wrap">
-      <div class="contact-box">
-        <div>
-          <span class="eyebrow">Contact</span>
-          <h2>Klaar om te bouwen?</h2>
-          <p style="color:var(--muted);margin-bottom:28px">Plan een vrijblijvend gesprek. Binnen een week weet je wat er mogelijk is voor jouw idee of organisatie.</p>
-          <a class="btn" href="mailto:K.leunissen@chippr.dev">Stuur een bericht</a>
-        </div>
-        <address>
-          <strong>Chippr</strong>
-          <span>Europalaan 100</span>
-          <span>Utrecht, Nederland</span>
-          <a href="mailto:K.leunissen@chippr.dev">K.leunissen@chippr.dev</a>
-        </address>
+      <div>
+        <span class="label">Aan de slag</span>
+        <h2>Heb je een tof idee?</h2>
+        <p>Neem contact op, dan kijken we samen wat er mogelijk is. Geen verkooppraatje, gewoon een goed gesprek.</p>
+        <a class="btn" href="mailto:K.leunissen@chippr.dev">Stuur een bericht</a>
       </div>
+      <address>
+        <b>Chippr</b>
+        in samenwerking met IGNE Software Solutions<br>
+        Europalaan 100<br>
+        3526 KS Utrecht<br><br>
+        <a href="mailto:K.leunissen@chippr.dev">K.leunissen@chippr.dev</a>
+      </address>
     </div>
   </section>
 
@@ -499,8 +350,8 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Chippr</span>
-    <span class="mono">Utrecht · Europalaan 100 · Spark ✦</span>
+    <span>© 2026 Chippr · Utrecht</span>
+    <span>Jong talent dat jouw idee bouwt.</span>
   </div>
 </footer>
 
